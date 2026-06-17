@@ -332,7 +332,9 @@ export default function MotherArticleSuggestions({ motherId }) {
     setData(null);
 
     try {
-      const response = await fetch("/api/chatbot/mother-articles", {
+   // في أعلى الدالة fetchSuggestions
+const API_URL = import.meta.env.VITE_API_URL || "";
+const response = await fetch(`${API_URL}/api/chatbot/mother-articles`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ motherId }),
