@@ -1,0 +1,238 @@
+:root {
+  --bg: #0f172a;
+  --text: #f8fafc;
+  --accent: #3b82f6;
+  --border: #1e293b;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg);
+}
+
+.auth-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-card h2 {
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.auth-card input,
+.auth-card select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.auth-card button {
+  width: 100%;
+  padding: 12px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.auth-card button:disabled {
+  opacity: 0.6;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.success {
+  color: green;
+  margin-bottom: 10px;
+}
+
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+/*thems */
+.auth-wrapper {
+  background: #fbf9f8;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.auth-box {
+  width: 100%;
+  max-width: 1100px;
+  background: #fff;
+  border-radius: 40px;
+  padding: 60px 80px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.08);
+  animation: fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-box {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.input-group label {
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.input {
+  width: 100%;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1.5px solid #eee;
+  background: #fafafa;
+  margin-bottom: 20px;
+}
+
+.input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--light);
+}
+
+.btn-main {
+  width: 100%;
+  padding: 18px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 20px;
+}
+/* select role*/
+
+.role-box {
+  text-align: center;
+}
+
+.role-box h2 {
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.role-box p {
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.role-card {
+  padding: 25px;
+  border-radius: 18px;
+  border: 1.5px solid #eee;
+  background: #fafafa;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.role-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+}
+
+.role-card span {
+  display: block;
+  font-size: 16px;
+}
+
+/* تمييز بسيط لكل رول */
+.role-card.mother:hover {
+  background: #fff0f6;
+}
+
+.role-card.doctor:hover {
+  background: #eff6ff;
+}
+
+.role-card.vendor:hover {
+  background: #f0fdf4;
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+  .role-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== MOBILE FIXES ===== */
+@media (max-width: 768px) {
+  /* Login & Register - تصغير الـ padding */
+  .auth-box {
+    padding: 40px 20px;
+    border-radius: 20px;
+  }
+
+  /* Login - توسيط العنوان */
+  .auth-box h1,
+  .auth-box h2,
+  .auth-box p,
+  .auth-box .subtitle {
+    text-align: center !important;
+  }
+
+  /* Register - كل إنبت في سطر لوحده */
+  .auth-box form {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Register - إلغاء span 2 من الحقول والزر */
+  .auth-box form > div {
+    grid-column: span 1 !important;
+  }
+
+  .auth-box form > button {
+    grid-column: span 1 !important;
+  }
+
+  /* Login - توسيط الـ label */
+  .input-group label {
+    justify-content: center;
+  }
+
+  /* Login - توسيط forgot password */
+  .forgot-password {
+    text-align: center !important;
+  }
+}

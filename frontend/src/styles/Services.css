@@ -1,0 +1,238 @@
+
+
+/* Floating hearts */
+#floating-hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  color: #f7dbe3;
+  opacity: 0.6;
+  animation: floatUp 10s linear infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) scale(0.5) rotate(0deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.5) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Layout */
+.services-page-body {
+  background-color: #fbf9f8;
+  color: #4a3f3d;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  min-height: 100vh;
+}
+
+.services-main-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 120px 50px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-container {
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Reveal */
+.reveal-text {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+}
+.reveal-text.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Title */
+.services-page-title {
+  font-family: "Georgia", serif;
+  font-size: 3.5rem;
+  color: #333;
+  border-bottom: 4px solid #f7e1e8;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+/* Intro */
+.services-intro-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 50px;
+  color: #666;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 500;
+}
+.services-intro-text .highlight {
+  color: #d68b9d;
+  font-weight: bold;
+}
+
+/* Cards layout */
+.services-top-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+.services-bottom-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Card */
+.service-cards{
+  background: #fff;
+height: 400px;
+  width: 320px;
+  padding: 40px 25px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid #fdf2f5;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.service-cards:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 15px 30px rgba(75, 47, 54, 0.2);
+  border-color: #f7dbe3;
+}
+
+/* AI card */
+.ai-card {
+  border: 2px solid #f7dbe3;
+  position: relative;
+  animation: aiPulse 3s infinite alternate;
+}
+@keyframes aiPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(214, 139, 157, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 20px 10px rgba(214, 139, 157, 0.1);
+    transform: scale(1.02);
+  }
+}
+.ai-card:hover {
+  animation: none;
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(214, 139, 157, 0.3);
+}
+
+/* Icon */
+.icon-wrapper {
+  width: 85px;
+  height: 85px;
+  background-color: #fdf2f5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: transform 0.4s;
+}
+.service-card:hover .icon-wrapper {
+  transform: rotateY(180deg);
+}
+.icon-wrapper i {
+  font-size: 2.5rem;
+  color: #d68b9d;
+}
+
+/* Card text */
+.service-card h3 {
+  font-family: "Georgia", serif;
+  font-size: 1.4rem;
+  color:#fdf2f5;
+  /* #333;*/
+  margin-bottom: 15px;
+}
+.service-card p {
+  color: #777;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+  flex-grow: 1;
+  font-weight: 500;
+}
+
+/* Button */
+.btn-service {
+  background: transparent;
+  border: 2px solid #eab8c6;
+  color: #d68b9d;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 0.95rem;
+  width: 100%;
+  font-family: inherit;
+}
+.service-card:hover .btn-service {
+  background: #eab8c6;
+  color: #fff;
+}
+.btn-service.primary {
+  background: #d68b9d;
+  color: white;
+}
+
+/* Footer */
+.services-footer {
+  text-align: center;
+  padding: 25px;
+  color: #888;
+  font-size: 0.9rem;
+  font-weight: 500;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 1050px) {
+  .services-main-content {
+    padding: 100px 20px 40px;
+  }
+  .services-page-title {
+    font-size: 2.5rem;
+  }
+  .service-card {
+    width: 100%;
+    max-width: 350px;
+  }
+}

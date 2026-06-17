@@ -1,0 +1,260 @@
+
+
+/* Layout */
+.about-page-body {
+  display: flex;
+  height: 100vh;
+  background-color: #fbf9f8;
+  color: #4a3f3d;
+  overflow: hidden;
+  position: relative;
+}
+
+.about-main-content {
+  flex: 1;
+  padding: 100px 60px 60px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+/* Reveal animation */
+.reveal-text {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+}
+.reveal-text.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Title */
+.about-page-title {
+  font-family: "Georgia", serif;
+  font-size: 3.5rem;
+  color: #333;
+  border-bottom: 4px solid #f7e1e8;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+
+/* Intro */
+.about-intro-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  color: #666;
+  font-weight: 600;
+}
+.about-intro-text .highlight {
+  color: #d68b9d;
+  font-weight: bold;
+}
+
+/* Hero image */
+.hero-image-container {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.hero-image {
+  width: 100%;
+  height: 100%;
+  background-image: url("image_8.png");
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.8s ease-out;
+}
+.hero-image-container:hover .hero-image {
+  transform: scale(1.05);
+}
+
+/* Flip cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.flip-card {
+  background-color: transparent;
+  height: 280px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+}
+.flip-card:hover .flip-card-inner,
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 15px;
+}
+.flip-card-front {
+  background-color: #fff;
+  color: #333;
+  border-top: 5px solid #eab8c6;
+}
+.flip-card-front i {
+  font-size: 3rem;
+  color: #eab8c6;
+  margin-bottom: 15px;
+}
+.flip-card-front h3 {
+  font-family: "Georgia", serif;
+  font-size: 1.8rem;
+  color: #d68b9d;
+}
+.flip-card-back {
+  background-color: #eab8c6;
+  color: white;
+  transform: rotateY(180deg);
+}
+.flip-card-back p {
+  line-height: 1.6;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* Accordion */
+.accordion-container {
+  margin-bottom: 60px;
+}
+.section-subtitle {
+  font-family: "Georgia", serif;
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 25px;
+}
+.accordion-item {
+  background: #fff;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+}
+.accordion-header {
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background 0.3s;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: inherit;
+  color: #4a3f3d;
+}
+.accordion-header:hover {
+  background: #fdf2f5;
+}
+.accordion-header i {
+  color: #eab8c6;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.accordion-header.active i {
+  transform: rotate(180deg);
+}
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+  background: #fafafa;
+}
+.accordion-content.open {
+  max-height: 300px;
+}
+.accordion-content p {
+  padding: 25px;
+  line-height: 1.7;
+  color: #666;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Team box */
+.team-box {
+  background: #f7e1e8;
+  padding: 30px;
+  border-radius: 15px;
+  color: #333;
+  margin-top: 50px;
+  text-align: center;
+  border: 2px solid #eab8c6;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Footer */
+.footer-simple {
+  text-align: center;
+  padding: 25px;
+  color: #888;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-top: 1px solid #eee;
+  margin-top: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive */
+@media (max-width: 1050px) {
+  .about-main-content {
+    padding: 100px 20px 40px;
+  }
+  .about-page-title {
+    font-size: 2.5rem;
+  }
+  .hero-image-container {
+    height: 200px;
+  }
+}
+.why-hero-image {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.why-image {
+  width: 100%;
+  display: block;
+  border-radius: 24px;
+  object-fit: cover;
+}
