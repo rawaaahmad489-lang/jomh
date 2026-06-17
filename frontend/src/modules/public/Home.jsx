@@ -177,7 +177,7 @@ const HomePage = () => {
               </a>
             </div>
             <div className="hero-actions-bottom">
-            href="https://www.youtube.com/watch?v=GXna8cKFhHg"
+<a href="https://www.youtube.com/watch?v=GXna8cKFhHg"
   className="btn-outline-light"
   target="_blank"
   rel="noopener noreferrer"
