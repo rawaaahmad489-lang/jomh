@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 
 // ── ثوابت ──────────────────────────────────────────────
-const API_BASE = "/api/chatbot"; // يمر عبر Vite proxy
+const API_BASE = `${import.meta.env.VITE_API_URL || ""}/api/chatbot`;
 
 // ══════════════════════════════════════════════════════
 // MAIN COMPONENT
