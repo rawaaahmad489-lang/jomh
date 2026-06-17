@@ -177,9 +177,13 @@ const HomePage = () => {
               </a>
             </div>
             <div className="hero-actions-bottom">
-              <a href="#" className="btn-outline-light">
-                <i className="fas fa-play-circle"></i> {t("hero.watch")}
-              </a>
+            href="https://www.youtube.com/watch?v=GXna8cKFhHg"
+  className="btn-outline-light"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <i className="fas fa-play-circle"></i> {t("hero.watch")}
+</a>
             </div>
           </div>
         </div>
